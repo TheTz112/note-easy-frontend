@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import MainScreen from '../../components/MainScreen';
 import { Link } from 'react-router-dom';
 import { Accordion, Badge, Button, Card } from 'react-bootstrap';
-import { notes } from '../../data/notes.js';
-
+import axios from 'axios';
 const MyNotes = () => {
-  const deleteHandler = (id) => {
-    if (window.confirm('Are you sure you want to delete')) {
-    }
+  const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
+  const fetchNotes = async () => {
+    const response = await axios.get('/notes');
+    setNotes(response.data);
   };
+
+  // const deleteHandler = (id) => {
+  //   if (window.confirm('Are you sure you want to delete')) {
+  //   }
+  // };
 
   return (
     <MainScreen title="Welcome Back Warintorn... ">
@@ -19,7 +29,7 @@ const MyNotes = () => {
       </Link>
 
       {notes.map((note) => (
-        <Accordion>
+        <Accordion key={note._id}>
           <Accordion.Item eventKey="0">
             <Card style={{ margin: 10 }}>
               <Card.Header style={{ display: 'flex' }}>
@@ -41,28 +51,13 @@ const MyNotes = () => {
                     {note.title}
                   </Accordion.Button>
                 </span>
-                <div>
-                  <Button href={`/note/${note._id}`}>Edit</Button>
-                  <Button
-                    variant="danger"
-                    className="mx-1"
-                    onClick={() => deleteHandler(note._id)}
-                  >
-                    delete
-                  </Button>
-                </div>
               </Card.Header>
               <Accordion.Body>
                 <Card.Body>
-                  <h4>
-                    <Badge bg="success" text="light">
-                      Category - {note.category}
-                    </Badge>
-                  </h4>
                   <blockquote className="blockquote mb-0">
                     <p>{note.content}</p>
                     <footer className="blockquote-footer">
-                      Created on -date
+                      Created on {note.created_date}
                     </footer>
                   </blockquote>
                 </Card.Body>

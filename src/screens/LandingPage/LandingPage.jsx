@@ -8,24 +8,13 @@ const LandingPage = () => {
         <Row>
           <div className="intro-text">
             <div>
-              <h1 className="title">Welcome To Note Easy</h1>
-              <p className="subtitle">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              </p>
+              <h1 className="title">Note Easy</h1>
+              <p className="subtitle"></p>
             </div>
             <div className="bth-container">
-              <a href="/login">
+              <a href="/mynotes">
                 <Button size="lg" className="landingbutton">
-                  Login
-                </Button>
-              </a>
-              <a href="/register">
-                <Button
-                  size="lg"
-                  className="landingbutton"
-                  variant="outline-primary"
-                >
-                  Signup
+                  Notes
                 </Button>
               </a>
             </div>

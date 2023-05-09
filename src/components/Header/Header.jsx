@@ -27,7 +27,16 @@ const Header = () => {
             navbarScroll
           >
             <Nav.Link>
-              <Link to="/mynotes">My Notes</Link>
+              <Link to="/mynotes">Notes</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/customers">Customers</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/history">History Notes</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/category">Category</Link>
             </Nav.Link>
 
             <NavDropdown
