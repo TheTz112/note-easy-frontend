@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MainScreen from '../../components/MainScreen';
 import { Link } from 'react-router-dom';
-import { Accordion, Badge, Button, Card } from 'react-bootstrap';
+import { Accordion, Button, Card } from 'react-bootstrap';
 import axios from 'axios';
 const MyNotes = () => {
   const [notes, setNotes] = useState([]);
@@ -21,7 +21,7 @@ const MyNotes = () => {
   // };
 
   return (
-    <MainScreen title="Welcome Back Warintorn... ">
+    <MainScreen title="NOTE EASY ">
       <Link to="createnote">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           Create New Note
