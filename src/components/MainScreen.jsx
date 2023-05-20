@@ -14,6 +14,12 @@ const MainScreen = ({ title, children }) => {
               </>
             )}
             {children}
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Blanditiis porro voluptatibus quisquam cupiditate impedit! Ab
+              necessitatibus velit exercitationem incidunt, error ipsam, debitis
+              quidem nemo officiis praesentium laboriosam et eaque ratione!
+            </p>
           </div>
         </Row>
       </Container>
